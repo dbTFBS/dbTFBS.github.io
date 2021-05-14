@@ -2,11 +2,20 @@
 <html>
     <meta charset="UTF-8">
     <body>
-        <h1 style="text-align: center;">Under construction</h1>
+        <h1 style="text-align: center;">Redirect to new location</h1>
+        <div style="text-align: center;">(<a id="locationLink">click here if the redirection was failed</a>)</div>
         <script>
-            function myFunction() {
-                window.location.href = "https://cistro.me/";
+            url = window.location.href
+            var search = "";
+            if ((!url.includes("?"))||url.split("?").length<2) {
+                search = "";
+            } else {
+                search = "?"+url.split("?")[1];
             };
+            function myFunction() {
+                window.location.href = "https://as0201821.github.io/dbTFBS/"+search;
+            };
+            document.getElementById("locationLink").href = "https://as0201821.github.io/dbTFBS/"+search;
             setTimeout(myFunction, 2000);
         </script>
     </body>
